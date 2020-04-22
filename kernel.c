@@ -17,10 +17,10 @@ int main()
 	unsigned int j =  0;
 	while (str[i] != '\0') {
 		VGA_MEMORY[j] = str[i];
-		VGA_MEMORY[j +1] = 0x07;
+		VGA_MEMORY[j + 1] = 0x07;
 		i++;
 		j = j + 2;
-		}
+	}
 
 	
 		return 0;
