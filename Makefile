@@ -1,3 +1,6 @@
+#PLEASE ENSURE THAT THE DIRECTORY PATHS/NAMES AND NAMES OF FILES ARE PROPER
+#DONT COPY BLINDLY FROM EBOOK PROVIDED
+#OTHERWISE MAKEFILE COMMANDS ESPECIALLY XORISSO WONT EXECUTE PROPERLY
 CC=gcc
 TARGET=myos
 C_FILES=./kernel.c
@@ -15,7 +18,7 @@ $(TARGET):$(OBJS)
 	$(CC) -m32 -nostdlib -nodefaultlibs -lgcc start.o $? -T linker.ld -o $(TARGET)
 
 finale:
-	$(shell cp $(TARGET) ./myos/boot/$(TARGET))
+	$(shell cp $(TARGET) ./iso/boot/$(TARGET))
 	$(shell grub2-mkrescue myos --output=$(TARGET).iso)
 
 clean:
